@@ -1,0 +1,30 @@
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-bottom {
+  &-big {
+    margin-bottom: 8rem !important;
+  }
+  &-medium {
+    margin-bottom: 4rem !important;
+  }
+  &-small {
+    margin-bottom: 2rem !important;
+  }
+}
+
+.u-margin-top {
+  &-huge {
+    margin-top: 10rem !important;
+  }
+  &-big {
+    margin-top: 8rem !important;
+  }
+  &-medium {
+    margin-top: 4rem !important;
+  }
+  &-small {
+    margin-top: 2rem !important;
+  }
+}
