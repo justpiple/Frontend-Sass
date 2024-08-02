@@ -30,6 +30,11 @@ body {
   }
 }
 
+::selection {
+  background-color: #55c57a;
+  color: #fff;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
