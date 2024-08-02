@@ -8,8 +8,30 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 9 Pixels
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 8 Pixels, 8/16
+  }
+
+  @include respond(big-dekstop) {
+    font-size: 75%; // 12 Pixels
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }

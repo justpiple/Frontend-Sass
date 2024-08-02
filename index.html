@@ -11,7 +11,6 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/icon-font.css">
 </head>
 
 <body>
@@ -82,9 +81,16 @@
         </div>
         <div class="col-1-of-2">
           <div class="composition">
-            <img src="img/nat-1-large.jpg" alt="1" class="composition__photo composition__photo--p1">
-            <img src="img/nat-2-large.jpg" alt="2" class="composition__photo composition__photo--p2">
-            <img src="img/nat-3-large.jpg" alt="3" class="composition__photo composition__photo--p3">
+            <img src="img/nat-1-large.jpg" alt="1" srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+              sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+              class="composition__photo composition__photo--p1">
+            <img src="img/nat-2-large.jpg" alt="2" srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+              sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+              class="composition__photo composition__photo--p2">
+            <img src="img/nat-3-large.jpg" alt="3" srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+              sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+              class="composition__photo composition__photo--p3">
+
           </div>
         </div>
       </div>

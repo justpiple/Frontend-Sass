@@ -5,16 +5,25 @@
 
   &__button {
     background-color: $color-white;
+    border-radius: 50%;
+    cursor: pointer;
+    @include boxShadow;
     height: 7rem;
     width: 7rem;
     position: fixed;
     top: 6rem;
-    right: 6rem;
-    border-radius: 50%;
-    z-index: 2000;
-    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
-    cursor: pointer;
     text-align: center;
+    right: 6rem;
+    z-index: 2000;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
@@ -29,30 +38,41 @@
       $color-primary-dark
     );
     z-index: 1000;
+    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
-    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
     height: 100vh;
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
     z-index: 1500;
 
     opacity: 0;
     width: 0;
+    -webkit-transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   &__list {
+    list-style: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    list-style: none;
     text-align: center;
+    width: 100%;
   }
 
   &__item {
@@ -65,8 +85,8 @@
       display: inline-block;
       font-size: 3rem;
       font-weight: 300;
-      padding: 1rem 2rem;
       color: $color-white;
+      padding: 1rem 2rem;
       text-decoration: none;
       text-transform: uppercase;
       background-image: linear-gradient(
@@ -75,12 +95,12 @@
         transparent 50%,
         $color-white 50%
       );
-      background-size: 230%;
+      background-size: 225%;
       transition: all 0.4s;
 
       span {
-        margin-right: 1rem;
         display: inline-block;
+        margin-right: 1.5rem;
       }
     }
 
@@ -95,11 +115,13 @@
   &__checkbox:checked ~ &__background {
     transform: scale(80);
   }
+
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
   }
 
+  // ICON
   &__icon {
     position: relative;
     margin-top: 3.25rem;
@@ -141,17 +163,9 @@
   &__checkbox:checked + &__button &__icon::before {
     top: 0;
     transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -o-transform: rotate(135deg);
   }
   &__checkbox:checked + &__button &__icon::after {
     transform: rotate(-135deg);
     top: 0;
-    -webkit-transform: rotate(-135deg);
-    -moz-transform: rotate(-135deg);
-    -ms-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
   }
 }
